@@ -1,9 +1,10 @@
 
 ## Задание №1
 
-SELECT id,"Value","Date" 
-FROM lk_check
-QUALIFY ROW_NUMBER() OVER (PARTITION BY id ORDER BY "Date" DESC,"Value" DESC)=1
+#### На Teradata SQL:
+##### SELECT id,"Value","Date" 
+##### FROM lk_check
+##### QUALIFY ROW_NUMBER() OVER (PARTITION BY id ORDER BY "Date" DESC,"Value" DESC)=1
 
 
 
