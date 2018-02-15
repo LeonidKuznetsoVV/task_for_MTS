@@ -1,3 +1,14 @@
+
+## Задание №1
+
+SELECT id,"Value","Date" 
+FROM lk_check
+QUALIFY ROW_NUMBER() OVER (PARTITION BY id ORDER BY "Date" DESC,"Value" DESC)=1
+
+
+
+
+
 ## Задание № 2
 
 ##### В папке Task 2 находится набор файлов для реализации процесса загрузки файлов.
