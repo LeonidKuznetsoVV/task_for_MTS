@@ -1,29 +1,20 @@
 #!/usr/bin/python
-
 import sys
-
-for line in sys.stdin:
-	try:
-		line=line.strip()
+for line in sys.stdin: 
+	line=line.strip()
+ 	business_date,id,type,value=line.split(',')  
+	year,month,day=business_date.split('-')  
 	
-		business_date,id,type,value=line.split(',')
+	check_statement=isinstance(id,int) \ 
+	and isinstance(value,int) \ 
+	and isinstance(year,int) \ 
+	and isinstance(month,int) \ 
+	and isinstance(day,int) \ 
+	and len(type)==3 \ 
+	and len(year)==4 \ 
+	and len(month)==2 \ 
+	and len(day)==2  
 	
-		assert int(id)
-		assert len(type)==3
-		assert int(value)
-		year,month,day=business_date.split('-')
-		assert len(year)==4
-		assert len(month)==2
-		assert len(day)==2
-		assert int(day)
-		assert int(month)
-		assert int(year)
-
+	if check_statement:  
 		print line
-	except AssertionError:
-		pass
-		#print 'length error on line',line
-	except ValueError:
-		pass
-		#print 'type error on line',line
 	
